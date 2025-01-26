@@ -1,0 +1,35 @@
+version: 2.1
+
+executors:
+  cypress-executor:
+    docker:
+      - image: cypress/browsers:node16.19.0-chrome107-ff106
+    working_directory: ~/repo
+
+jobs:
+  install_dependencies:
+    executor: cypress-executor
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: |
+            npm install
+
+  run_tests:
+    executor: cypress-executor
+    steps:
+      - checkout
+      - run:
+          name: Run Cypress Tests
+          command: |
+            npx cypress run
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - install_dependencies
+      - run_tests:
+          requires:
+            - install_dependencies

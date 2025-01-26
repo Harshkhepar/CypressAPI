@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Anshita Bhasin ",
+  "author": "Harsh Khepar",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^12.17.4"
