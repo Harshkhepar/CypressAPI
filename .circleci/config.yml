@@ -3,7 +3,7 @@ version: 2.1
 executors:
   cypress-executor:
     docker:
-      - image: cypress/browsers:node16.19.0-chrome107-ff106
+      - image: cypress/browsers:node16.19.0-chrome
     working_directory: ~/repo
 
 jobs:
